@@ -217,7 +217,11 @@ Reply using these strict rules:
     'images': image_payload
 }
                     ],
-                    options={'num_thread': 4}
+                    options={
+                        'num_thread': 4,
+                        "num_ctx":1024,
+                        "temperature":0.1
+                        }
                 )
                 
                 print(ollama_result['message']['content'])
