@@ -201,28 +201,31 @@ try:
                 print(f"User said: {transcribed_text}")
                 
                 ollama_result = ollama.chat(
-                    model='ahmadwaqar/smolvlm2-2.2b-instruct',
+                    model='hf.co/ggml-org/SmolVLM2-500M-Video-Instruct-GGUF:Q8_0',
                     keep_alive=-1,
                     messages=[
-{
-    'role': 'user',
-    'content': f"""User's Question: "{transcribed_text}"
-
-Instruction: Look at the image and answer the user's question with absolute factual accuracy. Do not guess, do not assume, and do not hallucinate obstacles or safety status. You may describe human emotions if relevant to the question, but absolutely never use text words to describe emojis or facial expressions (like "smiling face", "wink", or "smiley").
-
-Reply using these strict rules:
-1. Max length: Two short, simple sentences.
-2. Tone: Speak completely naturally like a helpful peer.
-3. Formatting: Absolutely NO markdown, lists, asterisks, headers, or text emojis.
-4. MAKE YOUR ANSWER AS CONCISE AS POSSIBLE. GIVE A GENERAL DESCRIPTION UNLESS USER STATES OTHERWISE. PLEASE BE CONCISE AND DO NOT BE REPETITIVE.""",
-    'images': image_payload
-}
+                        # 1. Isolate the formatting rules completely into the system role
+                        {
+                            'role': 'system',
+                            'content': (
+                                "You are a helpful peer giving a general but precise description of the image and its content."
+                                "Rules: Max length is two short simple sentences. No markdown, no asterisks, "
+                                "no lists, no headers, no text emojis. Never say words like smiling face or smiley. "
+                                "Be highly concise and never repeat yourself."
+                            )
+                        },
+                        # 2. Keep the user role incredibly clean and focused purely on the question and image
+                        {
+                            'role': 'user',
+                            'content': f"Question: {transcribed_text}",
+                            'images': image_payload
+                        }
                     ],
                     options={
                         'num_thread': 4,
-                        "num_ctx":1024,
-                        "temperature":0.1
-                        }
+                        "num_ctx": 1024,
+                        "temperature": 0.1,  # Keep this low so it stays predictable
+                    }
                 )
                 
                 print(ollama_result['message']['content'])
