@@ -195,7 +195,7 @@ try:
                 
                 print("🦻 Processing speech with Whisper...")
                 
-                segments, info = whisper_model.transcribe(whisper_input_final, beam_size=5)
+                segments, info = whisper_model.transcribe(whisper_input_final, beam_size=5, language="en")
                 transcribed_text = "".join([segment.text for segment in segments]).strip()
                 
                 print(f"User said: {transcribed_text}")
@@ -213,7 +213,8 @@ Instruction: Look at the image and answer the user's question with absolute fact
 Reply using these strict rules:
 1. Max length: Two short, simple sentences.
 2. Tone: Speak completely naturally like a helpful peer.
-3. Formatting: Absolutely NO markdown, lists, asterisks, headers, or text emojis.""",
+3. Formatting: Absolutely NO markdown, lists, asterisks, headers, or text emojis.
+4. MAKE YOUR ANSWER AS CONCISE AS POSSIBLE. GIVE A GENERAL DESCRIPTION UNLESS USER STATES OTHERWISE. PLEASE BE CONCISE AND DO NOT BE REPETITIVE.""",
     'images': image_payload
 }
                     ],
