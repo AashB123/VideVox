@@ -109,6 +109,19 @@ def speak(text):
     except Exception as e:
         print(f"Streaming TTS playback error: {e}")
 
+ollama_model_names = [model.model for model in ollama.list().models]
+
+try:
+    if "hf.co/ggml-org/SmolVLM2-500M-Video-Instruct-GGUF:Q8_0" in ollama_model_names:
+        print("VLM Model Found")
+
+    else:
+        print("VLM Model NOT Found")
+        print("Initializing Download for the VLM")
+        ollama.pull("hf.co/ggml-org/SmolVLM2-500M-Video-Instruct-GGUF:Q8_0")
+except:
+    print("VLM Extraction Error Occurred")
+    
 url="http://192.168.4.1/Test"
 #DOWNLOAD HEY_BUDDY FILE VIA README INSTRUCTIONS
 WW_PATH = os.path.join(SCRIPT_DIR, 'INSERT_ALL_HEY_BUDDY', 'hey-buddy.onnx')
