@@ -175,6 +175,6 @@ VideVox relies heavily on the amazing work published by the open-source software
 * Ollama & the GGML Team: For developing the low-footprint, local inference runtime that allows accurate SmolVLM2 layers to run entirely offline on localized edge hardware.
 * Systran (faster-whisper): For engineering a streamlined, fast Speech-to-Text layer that avoids C-wrapper parsing bugs.
 * **Rhasspy (Piper TTS)**: Creates high-performance, native speech synthesis binaries alongside clear, natural-sounding voice profiles.
-  * `en_US-lessac-medium.onnx`: The trained C-based machine learning model binary handling low-latency voice inference.
-  * `en_US-lessac-medium.onnx.json`: The phoneme and synthesis configuration map essential for accurate speech pronunciation and pacing based on the LJSpeech dataset.
+  * `en_US-ljspeech-medium.onnx`: The trained C-based machine learning model binary handling low-latency voice inference.
+  * `en_US-ljspeech-medium.onnx.json`: The phoneme and synthesis configuration map essential for accurate speech pronunciation and pacing based on the LJSpeech dataset.
 * The Raspberry Pi Foundation: For delivering accessible, low-power single-board computer processing frameworks optimized for intense local AI development.
