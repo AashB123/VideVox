@@ -70,7 +70,7 @@ while True:
     
     if frame_count % skip_frame == 0:
         locator_list = []
-        frame_has_danger = False  # FIX: Track threat at frame scope to avoid NameError crash
+        frame_has_danger = False  # Track threat at frame scope to avoid NameError crash
 
         results_gen = model.predict(source=frame, conf=0.6, imgsz=640, show=False, verbose=False)
         results_single = results_gen if isinstance(results_gen, list) else results_gen
@@ -88,7 +88,7 @@ while True:
                     obj_danger = False
                     if area_percentage >= .32:
                         obj_danger = True
-                        frame_has_danger = True  # FIX: Persistent flag preserves safety warnings
+                        frame_has_danger = True  # Persistent flag preserves safety warnings
 
                     if x_center < LEFT_BOUND:
                         position = "on your left"
@@ -131,7 +131,7 @@ while True:
                         tts = "STOP! " + tts
 
                     print(tts)
-                    # FIX: Simplified directly to use your imported standard subprocess module
+                    # Simplified directly to use your imported standard subprocess module
                     audio_process = subprocess.Popen(f'espeak -s 150 "{tts}"', shell=True)
                     last_spoken_time = current_time
 
