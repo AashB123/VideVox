@@ -121,7 +121,9 @@ This script loops continuously to identify immediate obstacles and track clear p
 * Frame Optimization: The system dynamically determines the video dimensions using frame_w and frame_h, falling back to a standard 800x600 resolution if the camera properties cannot be read. To optimize thermals and prevent CPU throttling, model inference runs exclusively on **every second frame**.
 * ONNX Inference: Standard PyTorch models drop tracking speeds to an unusable 1–6 FPS. VideVox uses an optimized, raw **YOLO26n.onnx** runtime running straightforward prediction logic (`model.predict()`) to secure a smooth **19 FPS**.
 * Spatial Partitioning: The frame grid is split horizontally into three equal sections. The system evaluates the absolute center point of an object's bounding box to announce its location as **Left**, **Center**, or **Right**.
-* Depth Calculation: Proximity is mapped by calculating the screen occupancy percentage:  
+* Depth Calculation: Proximity is mapped by calculating the screen occupancy percentage:
+
+  
   $$\text{Proximity \%} = \frac{\text{Width} \times \text{Height}}{\text{frame}_w \times \text{frame}_h}$$
 
   
