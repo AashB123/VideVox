@@ -56,12 +56,15 @@ source venv/bin/activate
 *(Your terminal prompt will now display `(venv)` at the beginning of the line, confirming activation).*
 
 ### 3. Install System-Level Dependencies & Python Packages
-Install the required backend audio drivers, compilation libraries, and Python dependencies:
+Install the required backend audio drivers, compilation libraries, Ollama, and Python dependencies:
 
 ```bash
 # Update local package manager and install system utilities
 sudo apt update
 sudo apt install -y espeak portaudio19-dev
+
+#Download Ollama
+curl -fsSL https://ollama.com/install.sh | sh
 
 # Upgrade package installer and fetch python dependencies
 pip install --upgrade pip
