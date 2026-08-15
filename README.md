@@ -66,6 +66,9 @@ sudo apt install -y espeak portaudio19-dev
 #Download Ollama
 curl -fsSL https://ollama.com/install.sh | sh
 
+# Activate the virtual environment
+source venv/bin/activate
+
 # Upgrade package installer and fetch python dependencies
 pip install --upgrade pip
 pip install -r requirements.txt
