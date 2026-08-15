@@ -86,7 +86,7 @@ while True:
 
                 if area_percentage >= .15:
                     obj_danger = False
-                    if area_percentage >= .6:
+                    if area_percentage >= .32:
                         obj_danger = True
                         frame_has_danger = True  # FIX: Persistent flag preserves safety warnings
 
