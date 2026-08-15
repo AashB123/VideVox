@@ -71,7 +71,7 @@ def play_native_chime():
 def speak(text):
     print(f"Assistant: {text}")
     #DOWNLOAD PIPER AND ITS FILES VIA README INSTRUCTIONS
-    piper_path = os.path.join(SCRIPT_DIR, 'INSERT_ALL_PIPER_FILES', 'piper_src', 'build', 'piper')
+    piper_path = os.path.join(SCRIPT_DIR, 'INSERT_ALL_PIPER_FILES', 'piper_linux_aarch64', 'piper', 'piper')
     model_path = os.path.join(SCRIPT_DIR, 'INSERT_ALL_PIPER_FILES', 'en_US-ljspeech-medium.onnx')
 
     try:
