@@ -148,6 +148,11 @@ This pipeline triggers a highly responsive local voice-to-vision loop whenever d
 * Speech Synthesis: Output tokens pass straight into a native, high-speed, C-based **Piper TTS engine** utilizing an `LJSpeech-Medium` voice profile. This provides instant audio playback through user headphones, completely skipping heavy, Python-wrapped alternative setups.
 
 ---
+## AI Usage & Project Disclosure
+
+* **Core Foundation**: I designed, architected, and coded this entire application's base.
+* **AI Assistance**: I utilized AI tools for localized project optimization, code debugging, and formatting.
+* **Technical Ownership**: All system pipelines, conditional logic, and data parameters reflect my personal engineering work.
 
 ## License
 
