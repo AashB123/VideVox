@@ -123,6 +123,8 @@ This script loops continuously to identify immediate obstacles and track clear p
 * Spatial Partitioning: The frame grid is split horizontally into three equal sections. The system evaluates the absolute center point of an object's bounding box to announce its location as **Left**, **Center**, or **Right**.
 * Depth Calculation: Proximity is mapped by calculating the screen occupancy percentage:  
   $$\text{Proximity \%} = \frac{\text{Width} \times \text{Height}}{\text{frame}_w \times \text{frame}_h}$$
+
+  
   Detected items are sorted sequentially in an array from closest to farthest.
 * Priority Threat Management:
   * High Danger (≥ 32% view): Instantly forces smaller speech tasks to close using `pkill -f espeak` to play a critical, real-time warning.
