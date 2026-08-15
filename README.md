@@ -96,15 +96,15 @@ Run the specific script from the repository root depending on your immediate ope
 
 * Production Mode (Combined): Launches both the VLM capabilities and physical button-triggered tracking interfaces.
   ```bash
-  python OPEN_SOURCING_CODE/0_open_button.py
+  python 0_open_button.py
   ```
 * Object Detection Only Mode: Focuses purely on low-latency tracking and spatial layout updates.
   ```bash
-  python OPEN_SOURCING_CODE/1_open_YOLO_detection.py
+  python 1_open_YOLO_detection.py
   ```
 * Questionnaire Only Mode: Launches the offline local vision-language model loop running via Ollama.
   ```bash
-  python OPEN_SOURCING_CODE/2_open_QUESTIONNAIRE_ollama.py
+  python 2_open_QUESTIONNAIRE_ollama.py
   ```
 
 ### 2. Safety & System Termination
