@@ -167,6 +167,7 @@ VideVox relies heavily on the amazing work published by the open-source software
 
 * Ultralytics: For the underlying high-speed object checking structures that enabled smooth migration to an optimized YOLO26n platform.
 * Hugging Face & Benjamin Paine: For hosting the foundational Hey-Buddy ONNX wake word model, providing a clean, production-ready audio gate.
+* openWakeWord: For providing the lightweight, always-listening framework used for local background wake-word detection.
 * Ollama & the GGML Team: For developing the low-footprint, local inference runtime that allows accurate SmolVLM2 layers to run entirely offline on localized edge hardware.
 * Systran (faster-whisper): For engineering a streamlined, fast Speech-to-Text layer that avoids C-wrapper parsing bugs.
 * **Rhasspy (Piper TTS)**: Creates high-performance, native speech synthesis binaries alongside clear, natural-sounding voice profiles.
