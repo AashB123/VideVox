@@ -144,7 +144,7 @@ This pipeline triggers a highly responsive local voice-to-vision loop whenever d
 
 * Audio Hardware Alignment: Standard voice transcription modules crash on the Pi because they expect 16,000 Hz audio streams. VideVox sets up a direct, custom hardware channel to safely capture raw audio from the hardware adapter running at **48,000 Hz**.
 * Wake Word Verification: A background thread reads audio frames via an OpenWakeWord wrapper. It utilizes a **Hey-Buddy ONNX model** tuned to a conservative 40% confidence threshold to guarantee immediate responsiveness.
-* Context Capture & Transcription: Once triggered, a 3-second mic buffer is passed directly to a local **`faster-whisper`** engine. This extracts clean text tokens while avoiding the memory leaks found in default language bindings.
+* Context Capture & Transcription: Once triggered, a 5-second mic buffer is passed directly to a local **`faster-whisper`** engine. This extracts clean text tokens while avoiding the memory leaks found in default language bindings.
 * Local Vision-Language Model: Text queries and raw image bytes are bundled and routed to a quantized **SmolVLM2-500M-Video-Instruct-GGUF (Q8_0)** model running locally via Ollama. 
 * Latency Optimizations: Turnaround latency was successfully minimized from 30 seconds down to **11 seconds** total by hardcoding strict backend engine options:
   ```python
