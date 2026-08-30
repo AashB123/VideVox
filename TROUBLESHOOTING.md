@@ -24,3 +24,11 @@ To avoid startup crashes and missing library errors, your initial execution sequ
    python3 0_open_button.py
    ```
    The scripts will now successfully bind directly to the active hardware IP video stream using your local fallback parameters.
+   
+### Audio Input/Output Distortions
+
+If the audio feedback in the earbuds becomes distorted or glitches, the issue is most likely caused by the USB-to-audio jack adapter. Please execute the following troubleshooting steps in order:
+
+1. **Hardware Reset:** Disconnect and reconnect the USB-to-audio adapter before debugging or altering the programs.
+2. **System Reset:** If the problem persists, reboot the Raspberry Pi 5.
+3. **Software Updates:** Ensure the Raspberry Pi OS is fully updated (`sudo apt update && sudo apt upgrade`) to resolve any potential operating system audio configuration or driver conflicts.
