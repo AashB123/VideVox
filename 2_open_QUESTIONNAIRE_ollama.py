@@ -31,10 +31,10 @@ gc.collect()
 def get_input_device():
     devices = sd.query_devices()
     for idx, dev in enumerate(devices):
-        if dev['name'] in ['default', 'pulse'] and dev['max_input_channels'] > 0:
+        if any(x in dev['name'].lower() for x in ['default', 'pulse', 'pipewire', 'istore']) and dev['max_input_channels'] > 0:
             return idx
     for idx, dev in enumerate(devices):
-        if dev['max_input_channels'] > 0:
+        if dev['max_input_channels'] > 0 and 'hdmi' not in dev['name'].lower():
             return idx
     raise RuntimeError("No input device with recording channels found!")
 
