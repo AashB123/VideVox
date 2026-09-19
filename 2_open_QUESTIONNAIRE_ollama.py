@@ -74,8 +74,9 @@ def play_native_chime():
 
 async def speak(text): #Piper speaking stream
     print(f"Assistant: {text}")
-    piper_path = '/home/bumba/visual_assistant/piper_src/build/piper'
-    model_path = '/home/bumba/visual_assistant/models/tts/en_US-ljspeech-medium.onnx'
+    #DOWNLOAD PIPER AND ITS FILES VIA README INSTRUCTIONS
+    piper_path = os.path.join(SCRIPT_DIR, 'INSERT_ALL_PIPER_FILES', 'piper', 'piper')
+    model_path = os.path.join(SCRIPT_DIR, 'INSERT_ALL_PIPER_FILES', 'en_US-ljspeech-medium.onnx')
     
     PIPER_RATE = 22050
     HARDWARE_RATE = 48000 
