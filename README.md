@@ -5,7 +5,7 @@ VideVox is an offline, edge-based visual assistant designed for the Raspberry Pi
 The entire system runs locally to ensure absolute data privacy, delivering audio feedback directly to the user's earbuds via a simple, physical two-button control interface.
 
 ---
-## [2026 Congressional App Challenge Demonstration]([https://github.com](https://www.youtube.com/watch?v=KsnFKGH2z0U))
+## [2026 Congressional App Challenge Demonstration](https://www.youtube.com/watch?v=KsnFKGH2z0U)
 
 ## System Requirements
 
