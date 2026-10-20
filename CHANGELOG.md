@@ -2,6 +2,15 @@
 
 All **notable** changes to this project will be documented in this file.
 
+## - 2026-10-19
+
+### Added
+- **Asynchronous Execution Architecture**: Upgraded to full asynchronous Python usage (`asyncio`, `aiohttp`, and `async_subprocess_exec`) across the entire VLM questionnaire pipeline to maximize performance and non-blocking I/O [2026-10-19].
+
+### Changed
+- **Inference Backend Migration**: Replaced the external Ollama framework with a localized, compiled `llama.cpp` `llama-server` subprocess, locked to physical CPU cores with strict batch and context bounds [2026-10-19].
+- **Streamlined Code & Time Efficiency**: Completely restructured the VLM questionnaire and audio streaming pipeline for instantaneous server response processing, pre-flight asset validation, and dynamic audio device auto-detection [2026-10-19].
+
 ## - 2026-09-18
 
 ### Added

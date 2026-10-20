@@ -6,6 +6,11 @@ If you encounter connection drops, dependency errors, or network timeout issues,
 
 Ensure all dependencies are downloaded, as stated in the [Installation Blueprint](README.md#installation-blueprint).
 
+#### `llama.cpp` Server & VLM Engine Failures
+If the local VLM server fails to spawn, crashes on startup, or throws binary execution errors:
+- **Verify Installation & Compilation**: Ensure you strictly followed the `llama.cpp` installation and build instructions in the blueprint. Verify that `llama.cpp` was successfully cloned and built using CMake (`cmake -B build` followed by `cmake --build build --config Release -j 2`).
+- **Check for RPI Download/Network Issues**: If binaries or GGUF weights fail to load or appear corrupted, it is frequently caused by interrupted downloads, incomplete `curl` transfers, or unstable network connectivity on your personal Raspberry Pi during asset acquisition. Re-run the download commands to ensure all model files (`SmolVLM2-500M-Video-Instruct-Q8_0.gguf` and its projector counterpart) downloaded completely without packet loss.
+
 ### Network and Execution Order Protocol
 
 To avoid startup crashes and missing library errors, your initial execution sequence must strictly follow these two distinct phases:
