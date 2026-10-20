@@ -151,7 +151,7 @@ This pipeline triggers a highly responsive local voice-to-vision loop whenever d
 - **Dynamic Audio Hardware Auto-Detection**: Automatically queries connected sound devices via `sounddevice` to bind inputs and outputs cleanly across various USB-to-TRRS adapters without hardcoded hardware indices.
 - **Optimized `llama.cpp` `llama-server` VLM Core**: Replaces high-overhead API wrappers by spawning a localized, compiled `llama-server` process with hardware-pinned thread configurations (`-t 4`), small batch limits (`-b 256`), and a tight context envelope (`-c 256`) alongside SmolVLM2 projector weights (`mmproj`).
 - **Incremental Sentence-Level Streaming TTS**: Listens to the asynchronous VLM stream and applies a punctuation-split regex (`(?<=[.;:?\!—,])\s+|(?<=\.\.\.)\s+`) to chunk sentences on the fly. Completed sentences are fed directly into Piper TTS for near-instant audio feedback before the full response generation completes.
-- **Wake Word Verification & Whisper STT**: Uses an OpenWakeWord wrapper with a `Hey-Buddy` ONNX model (40% confidence threshold) to gate a 5-second recording buffer, transcribed locally via `faster-whisper` (`int8` compute type).
+- **Wake Word Verification & Whisper STT**: Uses an OpenWakeWord wrapper with a `Hey-Buddy` ONNX model (45% confidence threshold) to gate a 3-second recording buffer, transcribed locally via `faster-whisper` (`int8` compute type).
 
 ---
 ## AI Usage & Project Disclosure
