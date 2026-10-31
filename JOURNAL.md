@@ -4,6 +4,8 @@ All **notable** changes to this project will be documented in this file.
 
 ## - 2026-10-19
 
+<img width="320" height="240" alt="IMG_0226" src="https://github.com/user-attachments/assets/f81bf486-7d0c-4ea0-8b6e-2daa29c2057f" />
+
 ### Added
 - **Asynchronous Execution Architecture**: Upgraded to full asynchronous Python usage (`asyncio`, `aiohttp`, and `async_subprocess_exec`) across the entire VLM questionnaire pipeline to maximize performance and non-blocking I/O [2026-10-19].
 
