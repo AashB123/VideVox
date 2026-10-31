@@ -1,7 +1,6 @@
 # Journal
 
 All **notable** changes to this project will be documented in this file.
-<img width="600" height="800" alt="VideVox_Thumbnail" src="https://github.com/user-attachments/assets/e66d73ab-449b-4db6-8a25-301bffbefbf9" />
 
 ## - 2026-10-19
 
@@ -13,7 +12,7 @@ All **notable** changes to this project will be documented in this file.
 - **Streamlined Code & Time Efficiency**: Completely restructured the VLM questionnaire and audio streaming pipeline for instantaneous server response processing, pre-flight asset validation, and dynamic audio device auto-detection [2026-10-19].
 
 ## - 2026-09-18
-
+<img width="600" height="800" alt="VideVox_Thumbnail" src="https://github.com/user-attachments/assets/e66d73ab-449b-4db6-8a25-301bffbefbf9" />
 ### Added
 - **Double-Streaming Architecture**: Integrated `ollama_tts_stream(prompt)` to fetch real-time text chunks word-by-word from the `SmolVLM2-500M-Video-Instruct-GGUF:Q8_0` model [2026-09-18].
 - **Sentence Boundary Cues**: Enabled immediate sentence-by-sentence vocalizations triggered instantly by punctuation marks, maximizing speech efficiency [2026-09-18].
