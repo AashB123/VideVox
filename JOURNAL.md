@@ -1,7 +1,7 @@
 # Journal
 
 All **notable** changes to this project will be documented in this file.
-![image](https://github.com)<img width="600" height="800" alt="VideVox_Thumbnail" src="https://github.com/user-attachments/assets/e66d73ab-449b-4db6-8a25-301bffbefbf9" />
+<img width="600" height="800" alt="VideVox_Thumbnail" src="https://github.com/user-attachments/assets/e66d73ab-449b-4db6-8a25-301bffbefbf9" />
 
 ## - 2026-10-19
 
