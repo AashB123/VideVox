@@ -4,8 +4,6 @@ All **notable** changes to this project will be documented in this file.
 
 ## - 2026-10-19
 
-<img width="320" height="240" alt="IMG_0226" src="https://github.com/user-attachments/assets/f81bf486-7d0c-4ea0-8b6e-2daa29c2057f" />
-
 ### Added
 - **Asynchronous Execution Architecture**: Upgraded to full asynchronous Python usage (`asyncio`, `aiohttp`, and `async_subprocess_exec`) across the entire VLM questionnaire pipeline to maximize performance and non-blocking I/O [2026-10-19].
 
@@ -14,8 +12,6 @@ All **notable** changes to this project will be documented in this file.
 - **Streamlined Code & Time Efficiency**: Completely restructured the VLM questionnaire and audio streaming pipeline for instantaneous server response processing, pre-flight asset validation, and dynamic audio device auto-detection [2026-10-19].
 
 ## - 2026-09-18
-
-<img width="600" height="800" alt="VideVox_Thumbnail" src="https://github.com/user-attachments/assets/e66d73ab-449b-4db6-8a25-301bffbefbf9" />
 
 ### Added
 - **Double-Streaming Architecture**: Integrated `ollama_tts_stream(prompt)` to fetch real-time text chunks word-by-word from the `SmolVLM2-500M-Video-Instruct-GGUF:Q8_0` model [2026-09-18].
