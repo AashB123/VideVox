@@ -8,6 +8,7 @@ Ensure all dependencies are downloaded, as stated in the [Installation Blueprint
 
 #### `llama.cpp` Server & VLM Engine Failures
 If the local VLM server fails to spawn, crashes on startup, or throws binary execution errors:
+- **Confirm Directory Placement**: Ensure the `llama.cpp` folder is located directly inside the `VideVox` project root directory (`VideVox/llama.cpp/`). If you cloned it elsewhere on your Raspberry Pi, simply move the entire `llama.cpp` folder into the `VideVox` project directory so the internal binary paths resolve properly.
 - **Verify Installation & Compilation**: Ensure you strictly followed the `llama.cpp` installation and build instructions in the blueprint. Verify that `llama.cpp` was successfully cloned and built using CMake (`cmake -B build` followed by `cmake --build build --config Release -j 2`).
 - **Check for RPI Download/Network Issues**: If binaries or GGUF weights fail to load or appear corrupted, it is frequently caused by interrupted downloads, incomplete `curl` transfers, or unstable network connectivity on your personal Raspberry Pi during asset acquisition. Re-run the download commands to ensure all model files (`SmolVLM2-500M-Video-Instruct-Q8_0.gguf` and its projector counterpart) downloaded completely without packet loss.
 
