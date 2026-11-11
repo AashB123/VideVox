@@ -35,17 +35,16 @@ Before running the scripts, ensure your hardware and software environment meet t
 Follow these step-by-step terminal commands to extract the application, isolate dependencies inside a dedicated Python 3.12 virtual environment, and fetch required asset files.
 
 ### 1. Extract and Navigate to the Project Folder
-Assuming the project source ZIP archive was downloaded to your default directory, execute the following commands to extract and enter the repository:
+Clone the repository to get the correct scripts and folders.
 
 ```bash
-cd ~/Downloads
-unzip *.zip
-cd visual_assistant
+git clone https://github.com/AashB123/VideVox.git
+cd VideVox
 ```
-> Note: Ensure your terminal or source code editor is working inside the `visual_assistant` project root directory so that internal file paths resolve properly.
+> Note: Ensure your terminal or source code editor is working inside the `VideVox` project root directory so that internal file paths resolve properly.
 
 ### 2. Set Up a Python 3.12 Virtual Environment
-Isolate your project dependencies from global system packages to prevent library version conflicts:
+Isolate your project dependencies from global system packages to prevent library version conflicts and download the main packages to run the scripts:
 
 ```bash
 # Initialize the virtual environment using Python 3.12
@@ -53,26 +52,18 @@ python3.12 -m venv venv
 
 # Activate the virtual environment
 source venv/bin/activate
-```
-*(Your terminal prompt will now display `(venv)` at the beginning of the line, confirming activation).*
 
-### 3. Install System-Level Dependencies & Python Packages
-Install the required backend audio drivers, compilation libraries, and Python dependencies:
-
-```bash
 # Update local package manager and install system utilities
 sudo apt update
 sudo apt install -y espeak portaudio19-dev cmake build-essential
-
-# Activate the virtual environment
-source venv/bin/activate
 
 # Upgrade package installer and fetch python dependencies
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
+*(Your terminal prompt will now display `(venv)` at the beginning of the line, confirming activation).*
 
-### 4. Fetch Asset & Model Files Manually
+### 3. Fetch Asset & Model Files Manually
 To ensure full offline capabilities, manually download and place the following files into their respective folders:
 
 - **Build `llama.cpp` and Download SmolVLM2 Weights**:
@@ -80,11 +71,9 @@ To ensure full offline capabilities, manually download and place the following f
   git clone --depth 1 https://github.com/ggml-org/llama.cpp
   mkdir -p smolvlm_models
   
-  curl -L -o smolvlm_models/SmolVLM2-500M-Video-Instruct-Q8_0.gguf \
-    https://huggingface.co/ggml-org/SmolVLM2-500M-Video-Instruct-GGUF/resolve/main/SmolVLM2-500M-Video-Instruct-Q8_0.gguf
+  curl -L -o smolvlm_models/SmolVLM2-500M-Video-Instruct-Q8_0.gguf \https://huggingface.co/ggml-org/SmolVLM2-500M-Video-Instruct-GGUF/resolve/main/SmolVLM2-500M-Video-Instruct-Q8_0.gguf
 
-  curl -L -o smolvlm_models/mmproj-SmolVLM2-500M-Video-Instruct-Q8_0.gguf \
-    https://huggingface.co/ggml-org/SmolVLM2-500M-Video-Instruct-GGUF/resolve/main/mmproj-SmolVLM2-500M-Video-Instruct-Q8_0.gguf
+  curl -L -o smolvlm_models/mmproj-SmolVLM2-500M-Video-Instruct-Q8_0.gguf \https://huggingface.co/ggml-org/SmolVLM2-500M-Video-Instruct-GGUF/resolve/main/mmproj-SmolVLM2-500M-Video-Instruct-Q8_0.gguf
 
   cd llama.cpp
   cmake -B build 
