@@ -71,9 +71,11 @@ To ensure full offline capabilities, manually download and place the following f
   git clone --depth 1 https://github.com/ggml-org/llama.cpp
   mkdir -p smolvlm_models
   
-  curl -L -o smolvlm_models/SmolVLM2-500M-Video-Instruct-Q8_0.gguf \https://huggingface.co/ggml-org/SmolVLM2-500M-Video-Instruct-GGUF/resolve/main/SmolVLM2-500M-Video-Instruct-Q8_0.gguf
+  curl -L -o smolvlm_models/SmolVLM2-500M-Video-Instruct-Q8_0.gguf \
+  https://huggingface.co/ggml-org/SmolVLM2-500M-Video-Instruct-GGUF/resolve/main/SmolVLM2-500M-Video-Instruct-Q8_0.gguf
 
-  curl -L -o smolvlm_models/mmproj-SmolVLM2-500M-Video-Instruct-Q8_0.gguf \https://huggingface.co/ggml-org/SmolVLM2-500M-Video-Instruct-GGUF/resolve/main/mmproj-SmolVLM2-500M-Video-Instruct-Q8_0.gguf
+  curl -L -o smolvlm_models/mmproj-SmolVLM2-500M-Video-Instruct-Q8_0.gguf \
+  https://huggingface.co/ggml-org/SmolVLM2-500M-Video-Instruct-GGUF/resolve/main/mmproj-SmolVLM2-500M-Video-Instruct-Q8_0.gguf
 
   cd llama.cpp
   cmake -B build 
